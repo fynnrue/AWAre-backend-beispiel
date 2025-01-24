@@ -1,0 +1,17 @@
+type Feature {
+    name: String
+    status: Boolean
+}
+
+input FeatureInput {
+    name: String
+    status: Boolean
+}
+
+type Query {
+    getDashboardFeature: Feature
+}
+
+type Mutation {
+    setDashboardFeature(feature: FeatureInput): Feature
+}

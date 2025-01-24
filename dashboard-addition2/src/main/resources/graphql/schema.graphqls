@@ -1,0 +1,9 @@
+type Query {
+    getGroupItems(group: String!): [Item]
+}
+
+type Item {
+    id: ID
+    name: String
+    group: String
+}
