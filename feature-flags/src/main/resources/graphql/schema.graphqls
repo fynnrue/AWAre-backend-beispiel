@@ -9,9 +9,10 @@ input FeatureInput {
 }
 
 type Query {
-    getDashboardFeature: Feature
+    getFeature(name: String!): Feature
+    getAllFeatures: [Feature]
 }
 
 type Mutation {
-    setDashboardFeature(feature: FeatureInput): Feature
+    setFeature(feature: FeatureInput): Feature
 }
