@@ -1,18 +1,24 @@
 type Feature {
     name: String
     status: Boolean
+    application: String
+    excludedCourses: [Int]
 }
 
 input FeatureInput {
     name: String
     status: Boolean
+    application: String
 }
 
 type Query {
-    getFeature(name: String!): Feature
-    getAllFeatures: [Feature]
+    getFeature(name: String!, courseId: Int): Feature
+    getAllFeatures(application: String!): [Feature]
+    getExcludedCourses(featureName: String!): [Int]
 }
 
 type Mutation {
     setFeature(feature: FeatureInput): Feature
+    excludeCourseFromFeature(featureName: String!, courseId: Int!): [Int]
+    includeCourseInFeature(featureName: String!, courseId: Int!): [Int]
 }
